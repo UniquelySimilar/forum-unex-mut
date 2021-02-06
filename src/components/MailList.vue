@@ -1,23 +1,28 @@
 <template>
-  <div class="hello">
-    <MailAddress v-for="address in addresses" :key="address.id" :addressProp="address" @update-address="updateAddress" />
-    <br />
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>LINE 1</th>
-          <th>LINE 2</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="address in addresses" :key="address.id">
-          <td>{{ address.id }}</td>
-          <td>{{ address.line1 }}</td>
-          <td>{{ address.line2 }}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="mail-list">
+    <mail-address class="address" v-for="address in addresses" :key="address.id"
+      :addressProp="address" @update-address="updateAddress" />
+    <hr>
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>LINE 1</th>
+              <th>LINE 2</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="address in addresses" :key="address.id">
+              <td>{{ address.id }}</td>
+              <td>{{ address.line1 }}</td>
+              <td>{{ address.line2 }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -25,7 +30,7 @@
   import MailAddress from "./MailAddress.vue";
 
   export default {
-    name: "HelloWorld",
+    name: "MailList",
     data() {
       return {
         addresses: [
@@ -58,17 +63,7 @@
 </script>
 
 <style scope>
-  h3 {
-    margin: 40px 0 0;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  li {
-    display: inline-block;
-    margin: 0 10px;
+  .address {
+    margin-bottom: 1rem;
   }
 </style>

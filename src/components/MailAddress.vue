@@ -1,7 +1,15 @@
 <template>
-  <div class="mail-address">
-    <input v-model="address.line1" @change="updateAddress" />
-    <input v-model="address.line2" @change="updateAddress" />
+  <div class="mail-address row">
+    <div class="col-sm-12 col-md-6">
+      <div class="row">
+        <div class="col col-md-5">
+          <input v-model="address.line1" @change="updateAddress" />
+        </div>
+        <div class="col col-md-5">
+          <input v-model="address.line2" @change="updateAddress" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

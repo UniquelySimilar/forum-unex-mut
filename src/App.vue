@@ -1,16 +1,16 @@
 <template>
-  <div id="app">
-    <HelloWorld />
+  <div id="app" class="container">
+    <mail-list />
   </div>
 </template>
 
 <script>
-  import HelloWorld from './components/HelloWorld.vue'
+  import MailList from '@/components/MailList'
 
   export default {
     name: 'App',
     components: {
-      HelloWorld
+      MailList
     }
   }
 </script>
